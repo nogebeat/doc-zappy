@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Zappy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="icon" type="image/x-icon" href="https://intra.epitech.eu/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/androgyne" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/james-stroker" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="zappy_logo.svg" alt="Zappy Logo">
+                <h1>Zappy</h1>
+            </div>
+
+            <ul class="nav-links">
+                <li class="active"><a href="#introduction"><i class="fas fa-home"></i> Introduction</a></li>
+                <li><a href="#installation"><i class="fas fa-download"></i> Installation</a></li>
+                <li><a href="#utilisation"><i class="fas fa-terminal"></i> Utilisation</a></li>
+                <li><a href="#server"><i class="fas fa-server"></i> Serveur</a></li>
+                <li><a href="#gui"><i class="fas fa-desktop"></i> Interface Graphique</a></li>
+                <li><a href="#ai"><i class="fas fa-robot"></i> Intelligence Artificielle</a></li>
+                <li><a href="#protocole"><i class="fas fa-network-wired"></i> Protocole</a></li>
+                <li><a href="#gameplay"><i class="fas fa-gamepad"></i> Gameplay</a></li>
+                <li><a href="#architecture"><i class="fas fa-project-diagram"></i> Architecture</a></li>
+                <li><a href="#exemples"><i class="fas fa-lightbulb"></i> Exemples</a></li>
+                <li><a href="#tests"><i class="fas fa-vial"></i> Tests</a></li>
+                <li><a href="#contributeurs"><i class="fas fa-users"></i> Contributeurs</a></li>
+            </ul>
+
+            <div class="theme-switch">
+                <span>Mode sombre</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+
+        <main>
+            <div class="content">
+                <header>
+                    <h1>Zappy Documentation</h1>
+                    <p class="subtitle">Un jeu de simulation multi-joueurs inspiré de Zaphod Beeblebrox</p>
+                </header>
+
+                <section id="introduction" class="hero" data-aos="fade-up">
+                    <div class="hero-content">
+                        <h2>Qu'est-ce que Zappy?</h2>
+                        <p>Zappy est un jeu de simulation réseau où plusieurs équipes s'affrontent sur une carte en tuiles contenant des ressources. L'objectif est d'être la première équipe où au moins 6 joueurs atteignent le niveau d'élévation maximum.</p>
+                        <div class="cta-buttons">
+                            <a href="#installation" class="btn primary"><i class="fas fa-download"></i> Installer</a>
+                            <a href="#utilisation" class="btn secondary"><i class="fas fa-book"></i> Guide d'utilisation</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="zappy_logo.svg" alt="Zappy Game Illustration">
+                    </div>
+                </section>
+
+                <section id="fonctionnalites" class="features" data-aos="fade-up">
+                    <h2 style="color: black;">Fonctionnalités principales</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Jeu en réseau</h3>
+                            <p>Communication client-serveur via TCP/IP</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-desktop"></i>
+                            <h3>Interface graphique</h3>
+                            <p>Visualisation 2D/3D du monde avec SFML</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-robot"></i>
+                            <h3>IA autonome</h3>
+                            <p>Intelligence artificielle pour contrôler les joueurs</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Système de ressources</h3>
+                            <p>6 types de pierres précieuses et nourriture</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="installation" data-aos="fade-up">
+                    <h2 style="color: black;">Installation</h2>
+                    
+                    <h3 style="color: black;">Prérequis</h3>
+                    <ul>
+                        <li>GCC (version 8.0 ou supérieure)</li>
+                        <li>G++ (version 8.0 ou supérieure)</li>
+                        <li>Make</li>
+                        <li>SFML (pour l'interface graphique)</li>
+                        <li>Python 3.8+ (pour l'IA)</li>
+                    </ul>
+
+                    <h3 style="color: black;">Compilation</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>make</code></pre>
+                    </div>
+                    <p style="color: black;">Cette commande va compiler les trois composants principaux :</p>
+                    <ul>
+                        <li><code>zappy_server</code> - Le serveur de jeu</li>
+                        <li><code>zappy_gui</code> - L'interface graphique</li>
+                        <li><code>zappy_ai</code> - L'intelligence artificielle</li>
+                    </ul>
+                </section>
+
+                <section id="utilisation" data-aos="fade-up">
+                    <h2 style="color: black;">Utilisation</h2>
+                    
+                    <h3 style="color: black;">Démarrage du serveur</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Serveur</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>./zappy_server -p port -x width -y height -n name1 name2 ... -c clientsNb -f freq</code></pre>
+                    </div>
+
+                    <h3 style="color: black;">Lancement de l'interface graphique</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>GUI</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>./zappy_gui -p port -h machine</code></pre>
+                    </div>
+
+                    <h3 style="color: black;">Démarrage d'un client IA</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>IA</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>./zappy_ai -p port -n name -h machine</code></pre>
+                    </div>
+                </section>
+
+                <section id="server" data-aos="fade-up">
+                    <h2 style="color: black;">Serveur</h2>
+                    
+                    <p style="color: black;">Le serveur Zappy est écrit en C et gère le monde du jeu, les connexions clients et la logique de jeu.</p>
+                    
+                    <h3 style="color: black;">Architecture du serveur</h3>
+                    <div class="features-grid">
+                        <div class="component-card">
+                            <h3><i class="fas fa-network-wired"></i> Gestion réseau</h3>
+                            <p>Communication TCP/IP avec multiplexage via poll()</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-users"></i> Gestion équipes</h3>
+                            <p>Authentification et gestion des équipes</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-globe"></i> Monde de jeu</h3>
+                            <p>Génération et gestion du monde Trantor</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-magic"></i> Rituels d'élévation</h3>
+                            <p>Gestion des incantations et montées de niveau</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: black;">Options du serveur</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Options</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>-p port      : Numéro de port
+-x width     : Largeur du monde
+-y height    : Hauteur du monde
+-n name1...  : Noms des équipes
+-c clientsNb : Nombre de clients autorisés par équipe
+-f freq      : Fréquence d'exécution des actions</code></pre>
+                    </div>
+                </section>
+
+                <section id="gui" data-aos="fade-up">
+                    <h2 style="color: black;">Interface Graphique</h2>
+                    
+                    <p style="color: black;">L'interface graphique est développée en C++ avec SFML pour la visualisation 2D du monde de jeu.</p>
+                    
+                    <div class="component-card">
+                        <h3><i class="fas fa-desktop"></i> Fonctionnalités de l'interface</h3>
+                        <ul>
+                            <li>Visualisation en temps réel du monde</li>
+                            <li>Affichage des joueurs et de leurs mouvements</li>
+                            <li>Visualisation des ressources sur la carte</li>
+                            <li>Interface utilisateur pour contrôler la vue</li>
+                            <li>Animations des actions et rituels</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Structure GUI</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>GUI/
+├── includes/           # Headers C++
+│   ├── gamestate.hpp
+│   ├── renderer.hpp
+│   ├── window.hpp
+│   └── ...
+├── src/               # Code source
+│   ├── gui/           # Interface utilisateur
+│   ├── game/          # Logique de rendu
+│   ├── network/       # Communication réseau
+│   └── utils/         # Utilitaires
+└── assets/            # Ressources graphiques
+    ├── sprites/       # Images des éléments
+    ├── fonts/         # Polices
+    └── sounds/        # Sons (optionnel)</code></pre>
+                    </div>
+                </section>
+
+                <section id="ai" data-aos="fade-up">
+                    <h2 style="color: black;">Intelligence Artificielle</h2>
+                    
+                    <p style="color: black;">L'IA Zappy est développée en Python et contrôle automatiquement les joueurs dans le jeu.</p>
+                    
+                    <h3 style="color: black;">Composants de l'IA</h3>
+                    <div class="features-grid">
+                        <div class="component-card">
+                            <h3><i class="fas fa-brain"></i> Prise de décision</h3>
+                            <p>Algorithmes de décision basés sur l'état du jeu</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-search"></i> Collecte de ressources</h3>
+                            <p>Stratégies optimisées pour la collecte</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-magic"></i> Stratégie de rituel</h3>
+                            <p>Coordination pour les élévations de niveau</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-heartbeat"></i> Gestion de survie</h3>
+                            <p>Maintien des niveaux de vie</p>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Architecture IA</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>AI/Zappy_ai/
+├── behaviors/         # Comportements de l'IA
+│   ├── movement_ai.py
+│   ├── resource_ai.py
+│   ├── ritual_strategy.py
+│   └── survival_manager.py
+├── core/             # Composants principaux
+│   ├── decision_maker.py
+│   ├── network_handler.py
+│   └── state_manager.py
+├── data/             # Modèles de données
+│   ├── player_state.py
+│   ├── protocol_parser.py
+│   └── world_model.py
+└── communication/    # Communication
+    ├── broadcast_system.py
+    └── gui_interface.py</code></pre>
+                    </div>
+                </section>
+
+                <section id="protocole" data-aos="fade-up">
+                    <h2 style="color: black;">Protocole de communication</h2>
+                    
+                    <p style="color: black;">Le protocole de communication définit les interactions entre le serveur et les clients.</p>
+                    
+                    <h3 style="color: black;">Commandes principales</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Commandes client</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>Forward      : Avancer d'une case (7/f temps)
+Right        : Tourner à droite (7/f temps)
+Left         : Tourner à gauche (7/f temps)
+Look         : Regarder autour (7/f temps)
+Inventory    : Voir l'inventaire (1/f temps)
+Broadcast    : Diffuser un message (7/f temps)
+Connect_nbr  : Nombre de connexions disponibles
+Fork         : Reproduire un joueur (42/f temps)
+Eject        : Éjecter les joueurs (7/f temps)
+Take object  : Prendre un objet (7/f temps)
+Set object   : Poser un objet (7/f temps)
+Incantation  : Commencer un rituel (300/f temps)</code></pre>
+                    </div>
+
+                    <h3 style="color: black;">Séquence de connexion</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Protocole de connexion</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>1. Client se connecte au serveur
+   <-- WELCOME\n
+
+2. Client envoie le nom d'équipe
+   --> TEAM-NAME\n
+
+3. Serveur répond avec les informations
+   <-- CLIENT-NUM\n
+   <-- X Y\n</code></pre>
+                    </div>
+                </section>
+
+                <section id="gameplay" data-aos="fade-up">
+                    <h2 style="color: black;">Gameplay</h2>
+                    
+                    <h3 style="color: black;">Objectif du jeu</h3>
+                    <p style="color: black;">L'équipe gagnante est la première où au moins 6 joueurs atteignent le niveau maximum (niveau 8).</p>
+                    
+                    <h3 style="color: black;">Ressources disponibles</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-utensils"></i>
+                            <h3>Nourriture</h3>
+                            <p>Nécessaire pour survivre (126 unités de temps par unité)</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Linemate</h3>
+                            <p>Pierre précieuse pour les rituels</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Deraumere</h3>
+                            <p>Pierre précieuse pour les rituels</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Sibur</h3>
+                            <p>Pierre précieuse pour les rituels</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Mendiane</h3>
+                            <p>Pierre précieuse pour les rituels</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Phiras</h3>
+                            <p>Pierre précieuse pour les rituels</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gem"></i>
+                            <h3>Thystame</h3>
+                            <p>Pierre précieuse rare pour les rituels</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: black;">Tableau des élévations</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Exigences pour les rituels</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>Niveau | Joueurs | Linemate | Deraumere | Sibur | Mendiane | Phiras | Thystame
+1->2   |    1    |    1     |     0     |   0   |    0     |   0    |    0
+2->3   |    2    |    1     |     1     |   1   |    0     |   0    |    0
+3->4   |    2    |    2     |     0     |   1   |    0     |   2    |    0
+4->5   |    4    |    1     |     1     |   2   |    0     |   1    |    0
+5->6   |    4    |    1     |     2     |   1   |    3     |   0    |    0
+6->7   |    6    |    1     |     2     |   3   |    0     |   1    |    0
+7->8   |    6    |    2     |     2     |   2   |    2     |   2    |    1</code></pre>
+                    </div>
+                </section>
+
+                <section id="architecture" data-aos="fade-up">
+                    <h2 style="color: black;">Architecture du projet</h2>
+                    
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Structure du projet</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>Zappy/
+├── Server/               # Serveur de jeu (C)
+│   ├── src/
+│   │   ├── game/        # Logique de jeu
+│   │   ├── server/      # Réseau et communication
+│   │   └── utils/       # Utilitaires
+│   └── includes/        # Headers C
+├── GUI/                 # Interface graphique (C++)
+│   ├── src/
+│   │   ├── gui/         # Interface utilisateur
+│   │   ├── game/        # Rendu du jeu
+│   │   └── network/     # Communication réseau
+│   └── includes/        # Headers C++
+├── AI/                  # Intelligence artificielle (Python)
+│   └── Zappy_ai/
+│       ├── behaviors/   # Comportements IA
+│       ├── core/        # Composants principaux
+│       ├── data/        # Modèles de données
+│       └── communication/ # Communication
+└── docs/                # Documentation</code></pre>
+                    </div>
+                </section>
+
+                <section id="exemples" data-aos="fade-up">
+                    <h2 style="color: black;">Exemples d'utilisation</h2>
+                    
+                    <div class="component-card">
+                        <h3>Exemple complet de partie</h3>
+                        
+                        <h4 class="icn">1. Démarrer le serveur</h4>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span>Terminal 1</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                            <pre class="code-block"><code>./zappy_server -p 4242 -x 20 -y 20 -n team1 team2 team3 -c 4 -f 100</code></pre>
+                        </div>
+                        
+                        <h4 class="icn">2. Lancer l'interface graphique</h4>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span>Terminal 2</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                            <pre class="code-block"><code>./zappy_gui -p 4242 -h localhost</code></pre>
+                        </div>
+                        
+                        <h4 class="icn">3. Connecter des clients IA</h4>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span>Terminal 3-N</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                            <pre class="code-block"><code>./zappy_ai -p 4242 -n team1 -h localhost
+./zappy_ai -p 4242 -n team2 -h localhost
+./zappy_ai -p 4242 -n team3 -h localhost</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tests" data-aos="fade-up">
+                    <h2 style="color: black;">Tests</h2>
+                    
+                    <p style="color: black;">Le projet inclut des tests pour chaque composant :</p>
+                    
+                    <div class="features-grid">
+                        <div class="component-card">
+                            <h3><i class="fas fa-server"></i> Tests serveur</h3>
+                            <p>Tests unitaires pour la logique de jeu et le réseau</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-robot"></i> Tests IA</h3>
+                            <p>Tests des comportements et stratégies</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-network-wired"></i> Tests protocole</h3>
+                            <p>Validation du protocole de communication</p>
+                        </div>
+                        <div class="component-card">
+                            <h3><i class="fas fa-gamepad"></i> Tests intégration</h3>
+                            <p>Tests de bout en bout du système complet</p>
+                        </div>
+                    </div>
+                    
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Exécuter les tests</span>
+                            <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                        <pre class="code-block"><code>make tests_run</code></pre>
+                    </div>
+                </section>
+
+                <section id="contributeurs" data-aos="fade-up">
+                    <h2 style="color: black;">Contributeurs</h2>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-user icn"></i>
+                            <h3>James GBETCHEDJI</h3>
+                            <p>@nogebeat - Serveur et protocole</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user icn"></i>
+                            <h3>Orace HONFIN</h3>
+                            <p>@0R4C3 - Interface graphique</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user icn"></i>
+                            <h3>Christian ZINSOU</h3>
+                            <p>@nandozinsou - Intelligence artificielle</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user icn"></i>
+                            <h3>Méryl AMOUSSOU</h3>
+                            <p>@meryyl - Client Graphique </p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user icn"></i>
+                            <h3>AZANDE King</h3>
+                            <p>@Yoann11 - Server gameplay </p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user icn"></i>
+                            <h3>Fabrice AHOUANDJINOU</h3>
+                            <p>@Fabrice210 - Développeur Serveur</p>
+                        </div>
+                    </div>
+                    
+                    <p>Ce projet est réalisé dans le cadre du module B-YEP-400 à Epitech.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="bg-dark text-light py-4 mt-auto">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-md-6">
+                    <h5 class="text-uppercase mb-2">Zappy Project</h5>
+                    <p class="mb-1">&copy; 2025 Zappy Project Team</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://github.com/your-username/zappy" class="text-light">
+                            <i class="fab fa-github"></i> Code source
+                        </a>
+                        <a href="mailto:your.email@epitech.eu" class="text-light">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3 text-center text-md-start">
+                    <h5 class="text-uppercase">Réseaux</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2">
+                        <a href="#"><i class="fab fa-instagram fa-lg text-light"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg text-light"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp fa-lg text-light"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3 text-center text-md-end">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li>Adresse: Avenue ..., 01 BP 2377 Cotonou, Bénin</li>
+                        <li>Téléphone: <a href="tel:+22956549199" class="text-light">+229 56549199</a></li>
+                        <li>Email: <a href="mailto:nogeproductions@gmail.com" class="text-light">nogeproductions@gmail.com</a></li>
+                        <li>WhatsApp: <a href="https://wa.me/22956549199" class="text-light">Écrivez-nous ici</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+                if (currentTheme === 'dark') {
+                    themeToggle.checked = true;
+                }
+            } else {
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+                if (prefersDarkScheme.matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    themeToggle.checked = true;
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+            
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+            
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const codeBlock = button.closest('.code-container').querySelector('code');
+                    const textArea = document.createElement('textarea');
+                    textArea.value = codeBlock.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    button.textContent = 'Copié !';
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    }, 2000);
+                });
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
